@@ -1,0 +1,8 @@
+routes:
+  - route_id: home_office
+    origin: "12.914000,77.504000"        # example lat,lon
+    destination: "12.971600,77.594600"
+    baseline_duration_sec: 2400          # ~40 minutes free-flow guess
+    distance_m: 42000
+poll_interval_minutes: 5                 # metadata; not used yet
+timezone: "Asia/Kolkata"

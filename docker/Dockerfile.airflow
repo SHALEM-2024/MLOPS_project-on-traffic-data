@@ -1,0 +1,19 @@
+FROM apache/airflow:3.0.6-python3.11
+
+USER root
+# timezone so “today” aligns with IST (your containers already use IST elsewhere)
+RUN apt-get update -y && apt-get install -y --no-install-recommends tzdata && \
+    rm -rf /var/lib/apt/lists/*
+ENV TZ=Asia/Kolkata
+USER airflow
+
+# Install project Python deps inside Airflow image
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
+
+# Put your code and configs in a known path
+# (we’ll also mount them as volumes so you can edit live)
+COPY src /opt/airflow/project/src
+COPY configs /opt/airflow/project/configs
+# Let Airflow tasks import "src.*"
+ENV PYTHONPATH=/opt/airflow/project

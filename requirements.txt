@@ -1,0 +1,12 @@
+requests
+python-dotenv
+PyYAML
+pytz
+pandas
+pyarrow
+numpy
+scikit-learn
+joblib
+mlflow
+pendulum
+

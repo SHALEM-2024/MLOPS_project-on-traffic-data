@@ -1,0 +1,11 @@
+{
+  "generated_at_utc": "2025-09-11T10:30:10",
+  "today": "2025-09-11",
+  "reference_days": 7,
+  "psi_duration_sec": 0.3671171978664901,
+  "class_balance_shift": {
+    "heavy": 0.020833333333333332,
+    "light": -0.1888761467889909,
+    "moderate": 0.16804281345565747
+  }
+}

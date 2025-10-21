@@ -1,0 +1,22 @@
+FROM python:3.11-slim
+
+# System basics
+RUN apt-get update -y && apt-get install -y --no-install-recommends \
+    ca-certificates tzdata && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set timezone to Asia/Kolkata for consistent timestamps in logs
+ENV TZ=Asia/Kolkata
+
+WORKDIR /app
+
+# Copy and install Python deps
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy source and configs
+COPY src /app/src
+COPY configs /app/configs
+
+# Default command: run one-shot fetch
+#CMD ["python", "-m", "src.data.fetch"]
