@@ -54,7 +54,8 @@ The goal of this project is to predict traffic delays using real-time data fetch
 ### 1. Clone the Repository
 ```bash
 git clone [https://github.com/your-username/mlops_project-on-traffic-data.git](https://github.com/your-username/mlops_project-on-traffic-data.git)
-cd mlops_project-on-traffic-data```
+cd mlops_project-on-traffic-data
+```
 
 ### 2. Configure Environment
 Ensure your ```bash configs/routes.yaml``` is set up correctly. If you wish to use real data, add your TomTom API key in the configuration or source code environment variables.
