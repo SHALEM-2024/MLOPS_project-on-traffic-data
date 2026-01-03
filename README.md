@@ -58,4 +58,4 @@ cd mlops_project-on-traffic-data
 ```
 
 ### 2. Configure Environment
-Ensure your ```bash configs/routes.yaml``` is set up correctly. If you wish to use real data, add your TomTom API key in the configuration or source code environment variables.
+Ensure your ```configs/routes.yaml``` is set up correctly. If you wish to use real data, add your TomTom API key in the configuration or source code environment variables.
