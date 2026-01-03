@@ -44,3 +44,14 @@ The goal of this project is to predict traffic delays using real-time data fetch
 │   └── serve/           # FastAPI application
 ├── docker-compose.yaml  # Infrastructure orchestration
 └── requirements.txt     # Python dependencies
+
+## ⚙️ Setup & Installation
+
+### Prerequisites
+* Docker Desktop / Docker Engine installed.
+* TomTom API Key (optional if using the Demo provider).
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/your-username/mlops_project-on-traffic-data.git](https://github.com/your-username/mlops_project-on-traffic-data.git)
+cd mlops_project-on-traffic-data
