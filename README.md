@@ -67,3 +67,39 @@ Run the following command to build the images and start the containers (Airflow,
 docker-compose up -d --build
 ```
 Wait a few minutes for all services to initialize.
+
+
+## 🖥️ Usage & Interfaces
+Once the Docker containers are running, you can access the following interfaces:
+| Service | URL | Description |
+| :--- | :--- | :--- |
+| **Apache Airflow** | `http://localhost:8080` | Manage pipelines and view logs (User/Pass: `admin`/`admin`) |
+| **MLflow UI** | `http://localhost:5000` | View experiments, metrics, and registered models |
+| **Prediction API** | `http://localhost:8000/docs` | Swagger UI for testing model inference |
+
+
+🔄 The Pipelines (DAGs)
+This project contains three primary Airflow DAGs:
+
+1. traffic_fetch_5min
+Schedule: Every 5 minutes.
+
+Function: Hits the Traffic API (TomTom or Demo), retrieves the current traffic situation for configured routes, and appends it to a raw JSONL file in data/raw.
+
+2. traffic_label_daily
+Schedule: Daily.
+
+Function: Consolidates the raw data collected over the last 24 hours. It cleans the data and saves it in efficient Parquet format in data/clean.
+
+3. traffic_train_daily
+Schedule: Daily (After labeling).
+
+Function:
+
+Feature Engineering: Creates features like traffic_index and delay_seconds.
+
+Training: Trains a new Logistic Regression model.
+
+Drift Detection: Uses Evidently to compare the new data distribution against the training baseline.
+
+Model Promotion: Compares the metrics (F1-score/Accuracy) of the new model against the current Production model. If the new model is better, it replaces the old one in the MLflow Model Registry.
