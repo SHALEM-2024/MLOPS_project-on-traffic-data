@@ -64,5 +64,6 @@ Ensure your ```configs/routes.yaml``` is set up correctly. If you wish to use re
 Run the following command to build the images and start the containers (Airflow, Postgres, MLflow, API):
 
 ```bash
-docker-compose up -d --build ```
+docker-compose up -d --build
+```
 Wait a few minutes for all services to initialize.
