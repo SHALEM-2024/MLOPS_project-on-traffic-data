@@ -96,10 +96,10 @@ This project contains three primary Airflow DAGs:
 
    * Function:
 
-Feature Engineering: Creates features like traffic_index and delay_seconds.
-
-Training: Trains a new Logistic Regression model.
-
-Drift Detection: Uses Evidently to compare the new data distribution against the training baseline.
-
-Model Promotion: Compares the metrics (F1-score/Accuracy) of the new model against the current Production model. If the new model is better, it replaces the old one in the MLflow Model Registry.
+      * Feature Engineering: Creates features like traffic_index and delay_seconds.
+      
+      * Training: Trains a new Logistic Regression model.
+      
+      * Drift Detection: Uses Evidently to compare the new data distribution against the training baseline.
+      
+      * Model Promotion: Compares the metrics (F1-score/Accuracy) of the new model against the current Production model. If the new model is better, it replaces the old one in the MLflow Model Registry.
