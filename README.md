@@ -59,3 +59,10 @@ cd mlops_project-on-traffic-data
 
 ### 2. Configure Environment
 Ensure your ```configs/routes.yaml``` is set up correctly. If you wish to use real data, add your TomTom API key in the configuration or source code environment variables.
+
+### 3. Build and Run Services
+Run the following command to build the images and start the containers (Airflow, Postgres, MLflow, API):
+
+```bash
+docker-compose up -d --build ```
+Wait a few minutes for all services to initialize.
