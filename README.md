@@ -1,0 +1,46 @@
+# End-to-End MLOps Traffic Prediction Pipeline
+
+This project implements a robust, automated MLOps pipeline for predicting traffic conditions. It leverages **Apache Airflow** for orchestration, **MLflow** for experiment tracking and model registry, **Evidently AI** for data drift detection, and **FastAPI** for serving predictions. The entire stack is containerized using **Docker Compose**.
+
+## 🚀 Project Overview
+
+The goal of this project is to predict traffic delays using real-time data fetched from the TomTom API. The system handles the complete lifecycle of machine learning:
+1.  **Ingestion:** Fetches traffic data every 5 minutes.
+2.  **ETL:** Cleans and labels raw data daily.
+3.  **Training:** Retrains a Logistic Regression model daily on new data.
+4.  **Monitoring:** Detects data drift; checks if the new model performs better than the current production model ("Champion vs. Challenger").
+5.  **Serving:** Exposes the best model via a REST API.
+
+## 🛠 Tech Stack
+
+* **Orchestration:** Apache Airflow
+* **Model Tracking & Registry:** MLflow
+* **Model Serving:** FastAPI
+* **Data Monitoring:** Evidently AI
+* **Database:** PostgreSQL (for Airflow/MLflow metadata)
+* **Containerization:** Docker & Docker Compose
+* **Language:** Python 3.11+
+* **Libraries:** Pandas, Scikit-learn, PyArrow
+
+## 📂 Project Structure
+
+```bash
+├── configs/             # Configuration files (routes, database settings)
+├── dags/                # Airflow DAGs
+│   ├── fetch_5min.py         # High-frequency data fetching
+│   ├── label_daily.py        # Daily data cleaning/labeling
+│   └── traffic_train_daily.py # Training, Drift Check, Promotion
+├── data/                # Local data storage (Simulated Data Lake)
+│   ├── raw/             # Raw JSONL logs
+│   ├── clean/           # Processed parquet files
+│   ├── features/        # Training/Validation sets
+│   └── monitoring/      # Drift reports
+├── docker/              # Dockerfiles for specific services
+├── src/                 # Source code for pipeline logic
+│   ├── data/            # Connectors (TomTom/Demo) & Cleaning logic
+│   ├── features/        # Feature engineering
+│   ├── models/          # Train & Promote logic
+│   ├── monitoring/      # Drift detection logic
+│   └── serve/           # FastAPI application
+├── docker-compose.yaml  # Infrastructure orchestration
+└── requirements.txt     # Python dependencies
