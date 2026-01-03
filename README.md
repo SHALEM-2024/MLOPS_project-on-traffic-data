@@ -103,3 +103,45 @@ This project contains three primary Airflow DAGs:
       * Drift Detection: Uses Evidently to compare the new data distribution against the training baseline.
       
       * Model Promotion: Compares the metrics (F1-score/Accuracy) of the new model against the current Production model. If the new model is better, it replaces the old one in the MLflow Model Registry.
+
+## 📡 API Inference
+You can get predictions from the current production model via the API.
+
+Request:
+
+```bash
+
+curl -X 'POST' \
+  'http://localhost:8000/predict' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "features": [
+      0.5,  // traffic_index
+      120.0 // delay_seconds
+    ]
+  }'
+
+```
+Response:
+```bash
+JSON
+
+{
+  "prediction": 1,
+  "model_version": "Production-v3"
+}
+```
+
+## 🤝 Contributing
+Fork the repository.
+
+Create a feature branch (git checkout -b feature/AmazingFeature).
+
+Commit your changes (git commit -m 'Add some AmazingFeature').
+
+Push to the branch (git push origin feature/AmazingFeature).
+
+Open a Pull Request.
+
+📝 License
+Distributed under the MIT License. See LICENSE for more information.
