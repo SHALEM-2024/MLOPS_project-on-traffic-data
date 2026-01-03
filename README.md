@@ -82,27 +82,27 @@ Once the Docker containers are running, you can access the following interfaces:
 This project contains three primary Airflow DAGs:
 
 1. ```traffic_fetch_5min```
-   * Schedule: Every 5 minutes.
+   * **Schedule:** Every 5 minutes.
 
-   * Function: Hits the Traffic API (TomTom or Demo), retrieves the current traffic situation for configured routes, and appends it to a raw JSONL file in data/raw.
+   * **Function:** Hits the Traffic API (TomTom or Demo), retrieves the current traffic situation for configured routes, and appends it to a raw JSONL file in data/raw.
 
 2. ```traffic_label_daily```
-   * Schedule: Daily.
+   * **Schedule:** Daily.
 
-   * Function: Consolidates the raw data collected over the last 24 hours. It cleans the data and saves it in efficient Parquet format in data/clean.
+   * **Function:** Consolidates the raw data collected over the last 24 hours. It cleans the data and saves it in efficient Parquet format in data/clean.
 
 3. ```traffic_train_daily```
-   * Schedule: Daily (After labeling).
+   * **Schedule:** Daily (After labeling).
 
-   * Function:
+   * **Function:**
 
-      * Feature Engineering: Creates features like traffic_index and delay_seconds.
+      * **Feature Engineering:** Creates features like traffic_index and delay_seconds.
       
-      * Training: Trains a new Logistic Regression model.
+      * **Training:** Trains a new Logistic Regression model.
       
-      * Drift Detection: Uses Evidently to compare the new data distribution against the training baseline.
+      * **Drift Detection:** Uses Evidently to compare the new data distribution against the training baseline.
       
-      * Model Promotion: Compares the metrics (F1-score/Accuracy) of the new model against the current Production model. If the new model is better, it replaces the old one in the MLflow Model Registry.
+      * **Model Promotion:** Compares the metrics (F1-score/Accuracy) of the new model against the current Production model. If the new model is better, it replaces the old one in the MLflow Model Registry.
 
 ## 📡 API Inference
 You can get predictions from the current production model via the API.
