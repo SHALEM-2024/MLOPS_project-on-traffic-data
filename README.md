@@ -107,7 +107,7 @@ This project contains three primary Airflow DAGs:
 ## 📡 API Inference
 You can get predictions from the current production model via the API.
 
-Request:
+**Request:**
 
 ```bash
 
@@ -122,7 +122,8 @@ curl -X 'POST' \
   }'
 
 ```
-Response:
+**Response:**
+
 ```bash
 JSON
 
@@ -135,13 +136,13 @@ JSON
 ## 🤝 Contributing
 Fork the repository.
 
-Create a feature branch (git checkout -b feature/AmazingFeature).
+Create a feature branch (```git checkout -b feature/AmazingFeature```).
 
-Commit your changes (git commit -m 'Add some AmazingFeature').
+Commit your changes (```git commit -m 'Add some AmazingFeature' ```).
 
-Push to the branch (git push origin feature/AmazingFeature).
+Push to the branch (```git push origin feature/AmazingFeature```).
 
 Open a Pull Request.
 
-📝 License
+## 📝 License
 Distributed under the MIT License. See LICENSE for more information.
