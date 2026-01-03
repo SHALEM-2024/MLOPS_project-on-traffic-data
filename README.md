@@ -82,7 +82,7 @@ Once the Docker containers are running, you can access the following interfaces:
 This project contains three primary Airflow DAGs:
 
 1. ```traffic_fetch_5min```
-* Schedule: Every 5 minutes.
+  * Schedule: Every 5 minutes.
 
 Function: Hits the Traffic API (TomTom or Demo), retrieves the current traffic situation for configured routes, and appends it to a raw JSONL file in data/raw.
 
