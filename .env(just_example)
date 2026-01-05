@@ -1,0 +1,14 @@
+# switch provider
+
+TRAFFIC_PROVIDER=tomtom
+TOMTOM_API_KEY=
+
+# (optional safety caps you already used)
+MAX_REQUESTS_PER_DAY=750
+MAX_RETRIES=3
+REQUEST_TIMEOUT_SEC=10
+
+AIRFLOW_UID=1000
+
+MLFLOW_TRACKING_URI=http://mlflow:5000
+
