@@ -1,6 +1,6 @@
 # End-to-End MLOps Traffic Prediction Pipeline
 
-This project implements a robust, automated MLOps pipeline for predicting traffic conditions. It leverages **Apache Airflow** for orchestration, **MLflow** for experiment tracking and model registry, **Evidently AI** for data drift detection, and **FastAPI** for serving predictions. The entire stack is containerized using **Docker Compose**.
+This project implements a robust, automated MLOps pipeline for predicting traffic conditions. It leverages **Apache Airflow** for orchestration, **MLflow** for experiment tracking and model registry and **FastAPI** for serving predictions. The entire stack is containerized using **Docker Compose**.
 
 ## 🚀 Project Overview
 
