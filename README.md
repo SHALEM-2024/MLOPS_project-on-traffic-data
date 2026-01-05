@@ -16,7 +16,6 @@ The goal of this project is to predict traffic delays using real-time data fetch
 * **Orchestration:** Apache Airflow
 * **Model Tracking & Registry:** MLflow
 * **Model Serving:** FastAPI
-* **Data Monitoring:** Evidently AI
 * **Database:** PostgreSQL (for Airflow/MLflow metadata)
 * **Containerization:** Docker & Docker Compose
 * **Language:** Python 3.11+
