@@ -4,7 +4,7 @@ This project implements a robust, automated MLOps pipeline for predicting traffi
 
 ## 🚀 Project Overview
 
-The goal of this project is to predict traffic delays using real-time data fetched from the TomTom API. The system handles the complete lifecycle of machine learning:
+The goal of this project is to predict traffic delays using real-time data fetched from the TomTom API (Google maps API is paid, that's why TomTom). The system handles the complete lifecycle of machine learning:
 1.  **Ingestion:** Fetches traffic data every 5 minutes.
 2.  **ETL:** Cleans and labels raw data daily.
 3.  **Training:** Retrains a Logistic Regression model daily on new data.
