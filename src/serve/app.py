@@ -17,8 +17,8 @@ class PredictIn(BaseModel):
     lag1: float
     lag3_mean: float
 
-@app.get("/healthz")
-def healthz():
+@app.get("/health")
+def health():
     return {"ok": clf is not None}
 
 @app.post("/predict")
